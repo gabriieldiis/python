@@ -1,21 +1,26 @@
-print("Seja bem vindo!")
+print("Seja Bem Vido!")
 
 numero_secreto = 42
-chute = int(input("Digite o seu chute: "))
-
-acertou = chute == numero_secreto
-maior = chute > numero_secreto
-menor = chute < numero_secreto
 total_tentativas = 3
+rodada = 1
 
-while (total_tentativas > 0 ):
-    print(total_tentativas)
-    chute = int(input("Digite o seu chute: "))
+#enquanto ainda há tentativas disponiveis
+while (rodada <= total_tentativas):
+    print("Tentativa:", rodada ," de ", total_tentativas)
+    chute_str = input("Digite o seu chute: ")
+    print("Você digitou" , chute_str)
+    chute = int(chute_str)
+
+    acertou = chute == numero_secreto
+    maior = chute > numero_secreto
+    menor = chute < numero_secreto
+
     if (acertou):
-        print("Parabéns você acertou o numero secreto")
+        print("Você acertou")
     else:
-        if (maior):
-            print("seu número chutado é maior do que o número secreto")
+        if(maior):
+            print("O seu chute foi maior do que o numero secreto")
         elif (menor):
-            print("Seu número chutado é menor do que o número secreto")
-total_tentativas = total_tentativas - 1
+            print("O seu chute foi menor do que o numero secreto")
+    rodada = rodada + 1
+print("fim do jogo!!")
